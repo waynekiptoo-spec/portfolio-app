@@ -1,9 +1,19 @@
-import ProjectList from "./ProjectList";
-import EmptyState from "./EmptyState";
-
 function ProjectSection({ projects }) {
-  return projects.length === 0
-    ? <EmptyState />
-    : <ProjectList projects={projects} />;
+  return (
+    <div className="project-grid">
+      {projects.map((project) => (
+        <div key={project.id} className="project-card">
+          <h2 className="project-title">{project.title}</h2>
+          <p className="project-description">{project.description}</p>
+
+          <div className="button-group">
+            <button className="btn-secondary btn-small">View</button>
+            <button className="btn-primary btn-small">Details</button>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 }
+
 export default ProjectSection;

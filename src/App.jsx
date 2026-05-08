@@ -6,7 +6,6 @@ import ProjectSection from "./components/ProjectSection";
 import "./styles/app.css";
 
 function App() {
-  // ✅ Manual project listings (no localStorage)
   const [projects, setProjects] = useState([
     {
       id: 1,
@@ -26,21 +25,18 @@ function App() {
     },
   ]);
 
-  // ✅ Search state
   const [searchTerm, setSearchTerm] = useState("");
 
-  // ✅ Add new project function
   const addProject = (newProject) => {
-    setProjects((prevProjects) => [
-      ...prevProjects,
+    setProjects((prev) => [
+      ...prev,
       {
         ...newProject,
-        id: Date.now(), // ensures unique ID
+        id: Date.now(),
       },
     ]);
   };
 
-  // ✅ Filter projects based on search
   const filteredProjects = projects.filter((project) =>
     project.title.toLowerCase().includes(searchTerm.toLowerCase())
   );

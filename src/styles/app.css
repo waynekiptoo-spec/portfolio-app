@@ -1,25 +1,100 @@
+/* GLOBAL FONT */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 body {
-  font-family: Arial;
+  font-family: "Inter", sans-serif;
+  background: #f5f5f5;
   margin: 0;
+  color: #111827;
 }
 
+/* CONTAINER */
 .container {
-  padding: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px;
 }
 
-.grid {
+/* GRID */
+.project-grid {
   display: grid;
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+  margin-top: 25px;
 }
 
-.card {
-  border: 1px solid #ddd;
-  padding: 10px;
+/* CARD */
+.project-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 22px;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
 }
 
-/* Responsive */
-@media (min-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* TEXT */
+.project-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.project-description {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* BUTTON GROUP */
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* BASE BUTTON */
+button {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+/* PRIMARY */
+.btn-primary {
+  background: #111827;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+.btn-primary:hover {
+  background: #1f2937;
+  transform: translateY(-2px);
+}
+
+/* SECONDARY */
+.btn-secondary {
+  background: #e5e7eb;
+  color: #111827;
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+.btn-secondary:hover {
+  background: #d1d5db;
+  transform: translateY(-2px);
+}
+
+/* SMALL BUTTON */
+.btn-small {
+  font-size: 12px;
+  padding: 6px 10px;
 }
